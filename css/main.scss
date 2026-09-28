@@ -1,0 +1,844 @@
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {color: black; text-decoration: none;}
+img {display: block; width: 100%; height: auto;}
+
+html{
+  background-color: #05070D; 
+  font-family: Pretendard; 
+  color: #F0F0F0;
+}
+
+/******************** common ********************/
+$point-color: #EE7300;
+$white: #F0F0F0;
+$black: #05070D;
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+/*--------------- header ---------------*/
+.header_outer {
+  @include size(100%, 100px);
+  background-color:rgba(5, 7, 13, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  .header{
+    width: 1440px;
+    margin: 0 auto;
+    @include flex();
+    justify-content: space-between;
+
+    .logo {
+        width: 165px;
+    }
+    .gnb_menu {
+        @include flex();
+
+        .gnb {
+            @include flex();
+            li{
+              line-height: 100px;
+              a {
+                color: $white;
+                display: block;
+                padding: 0 30px;
+                font-size: 18px;
+                font-weight: 400;
+                transition: all 0.2s;
+                
+                &:hover {
+                  color: $point-color;
+                }
+              }
+            }
+        } //gnb
+        .lang {
+          @include size(66px, 26px);
+          margin-left: 10px;
+          border: 1px solid $white;
+          border-radius: 25px;
+          text-align: center;
+          line-height: 26px;
+          cursor: pointer;
+          transition: all 0.2s;
+          position: relative;
+
+          p{
+            font-size: 14px;
+            transition: all 0.2s;
+          }
+          .lang_box {
+            opacity: 0;
+            position: absolute;
+            top: 35px;
+            border: 1px solid $white;
+            border-radius: 8px;
+            width: 100%;
+            transition: all 0.2s;
+
+            p {
+              padding-top: 8px;
+              font-weight: 300;
+              transition: all 0.2s;
+
+              &:hover {
+                font-weight: 500;
+                color: $point-color;
+              }
+              &:last-child {
+                padding-bottom: 8px;
+              }
+            }
+          } //lang_box
+          
+          &:hover{
+            background-color: $white;
+            >p{
+              color: $black;
+              font-weight: 500;
+            }
+          }
+          &:hover .lang_box {
+            opacity: 1;
+          }
+        } //lang
+    } //gnb_menu
+  } //header
+} //header_outer
+
+/*--------------- main_visual ---------------*/
+section {@include size(100%, 100vh);}
+.main_visual_bg {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+
+  .main_visual {
+    @include flex();
+    justify-content: space-between;
+    @include size(1440px, 100%);
+    margin: 0 auto;
+
+    .main_txt {
+      p {
+        font-family: "Special Gothic Expanded One", sans-serif;
+        font-size: 80px;
+        line-height: 90px;
+        font-weight: 400;
+        opacity: 1;
+
+        &.txt_line {
+          color: $black;
+          text-shadow: 1px 0 $white, 0 1px $white, -1px 0 $white, 0 -1px $white;
+        }
+      }
+      span {
+        font-size: 20px;
+        opacity: 0.8;
+        display: block;
+        font-weight: 300;
+
+        &:nth-child(5) {
+          margin: 40px 0 15px;        
+        }
+      }
+    } //main_txt
+    .right_img {
+      width: auto;
+    }
+  } //main_visual
+}//main_visual_bg
+.overview_bg {
+  background-image: url(../images/bg_02.png);
+  background-size: cover;
+  background-position: center;
+
+  .overview {
+    @include flex();
+    justify-content: space-between;
+    @include size(1440px, 100%);
+    margin: 0 auto;
+
+    .view_left {
+      width: 40%;
+      position: relative;
+      .star {
+        @include size(41px, 41px);
+        position: absolute;
+        top: -20px; left: 75px;
+      }
+      p{
+        font-family: "Song Myung", serif;
+        font-size: 50px;
+        background-image: linear-gradient($white, $point-color);
+        background-clip: text;
+        color: transparent;
+        text-align: center;
+        opacity: 0;
+      }
+    }
+    
+    .view_txt {
+      .view_title {
+        font-family: "Special Gothic Expanded One", sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      p {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 15px;
+        font-weight: 300;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    } //view_txt
+    .fireworks {
+      width: auto;
+    }
+  } //overview
+}//overview_bg
+body.popup_open {
+  overflow: hidden;
+}
+.fireworks_bg {
+  background-image: url(../images/bg_03.png);
+  background-size: cover;
+  background-position: center;
+  @include size(100%, 100vh);
+  position: relative;
+  
+  .fireworks {
+    position: relative;
+    z-index: 1; 
+    display: grid;
+    align-content: center;
+    @include size(1440px, 100%);
+    margin: 0 auto;
+    
+    .title {
+      margin-bottom: 70px;
+      p {
+        font-family: "Special Gothic Expanded One", sans-serif;
+        color: $point-color;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      div {
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      span {
+        font-size: 18px;
+        font-weight: 300;
+      }
+    }
+    .txt {
+      >div {
+        @include flex();
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(240, 240, 240, 0.6);
+        padding: 35px 20px;
+        transition: all 0.3s;
+        opacity: 0;
+        cursor: pointer;
+
+        .span_left {
+          width: 40%;
+          @include flex();
+
+          span {
+            &:first-child {
+              width: 20%;
+              font-size: 30px;
+              font-weight: 700;
+              opacity: 0.5;
+              line-height: 56px;
+              transition: all 0.3s;
+            }
+            &:last-child {
+              font-family: "Special Gothic Expanded One", sans-serif;
+              font-size: 24px;
+              text-align: left;
+              opacity: 0;
+              line-height: 56px;
+              transition: all 0.3s;
+            }
+          }
+        }
+        >span {
+          font-size: 16px;
+          line-height: 28px;
+          font-weight: 300;
+          opacity: 0;
+          transition: all 0.3s;
+        }
+
+        &.on {
+          border-bottom: 1px solid $white;
+          span {
+            &:first-child {
+              opacity: 1;
+            }
+            &:last-child {
+              opacity: 1;
+            }
+          }
+          >span {
+            opacity: 1;
+          }
+        }
+        &:hover {
+          border-bottom: 1px solid $white;
+          span {
+            &:first-child {
+              opacity: 1;
+            }
+            &:last-child {
+              opacity: 1;
+            }
+          }
+          >span {
+            opacity: 1;
+          }
+        }
+      } //korea, UK, USA
+    } //txt
+  } //fireworks
+
+  .swiper {
+    @include size(100%, 100vh);
+    background-color: rgba(5, 7, 13, 0.8);
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 999;
+    display: none;
+    transition: all 0.3s;
+
+    &.on_pop {
+      display: block;
+    }
+
+    .swiper-slide {
+      width: 100%;
+      @include flex();
+      justify-content: center;
+
+      >div {
+        @include size(1070px, 770px);
+        background-position: center;
+        border-radius: 25px;
+        @include flex();
+        justify-content: center;
+        position: relative;
+        border: 1px solid rgba(240, 240, 240, 0.08);
+        box-sizing: border-box;
+
+        &.popup_korea {
+          background-image: url(../images/korea.jpg);
+        }
+        &.popup_UK {
+          background-image: url(../images/UK.jpg);
+        }
+        &.popup_USA {
+          background-image: url(../images/USA.jpg);
+        }
+
+        .txt_p {
+          position: absolute;
+          top: 40px; left: 50px;
+          p{
+            &:first-child {
+              font-family: "Special Gothic Expanded One", sans-serif;
+              font-size: 60px;
+              opacity: 0.1;
+            }
+            &:last-child {
+              font-size: 40px;
+              font-weight: 600;
+              opacity: 0.1;
+            }
+          }
+        }
+        .p_info {
+          text-align: center;
+          .one {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 5px;
+          }
+          .two {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-size: 26px;
+            color: $point-color;
+            margin-bottom: 40px;
+          }
+          p {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 500;
+            margin-bottom: 30px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .swiper-button-next, .swiper-button-prev {
+      position: absolute;
+      top: 50%;
+      @include size(30px, 30px);
+      color: $white;
+      padding: 15px;
+      background-color: rgba(240, 240, 240, 0.15);
+      border-radius: 30px;
+      opacity: 1;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        background-color: rgba(240, 240, 240, 0.3);
+      }
+    }
+    .swiper-button-next {
+      right: 8%;
+    }
+    .swiper-button-prev {
+      left: 8%;
+    }
+    .close {
+      position: absolute;
+      top: 80px; right: 9%;
+      @include size(35px, 35px);
+      background-image: url(../images/close.png);
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      z-index: 10;
+      // img {
+      //   @include size(25px, auto);
+      // }
+      &:hover {
+        background-image: url(../images/close_o.png);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  } //swiper
+} //fireworks_bg
+body.popup_open {
+  overflow: hidden;
+}
+.program_bg {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+
+  .program {
+    display: grid;
+    align-content: center;
+    @include size(1440px, 100%);
+    margin: 0 auto;
+    
+    .title {
+      margin-bottom: 230px;
+      p {
+        font-family: "Special Gothic Expanded One", sans-serif;
+        color: $point-color;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      div {
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      span {
+        font-size: 18px;
+        font-weight: 300;
+      }
+    }
+    .schedule {
+      display: flex;
+
+      >div{
+        width: calc(100% / 5);
+        position: relative;
+        padding-top: 30px;
+        border-top: 1px solid rgba(240, 240, 240, 0.6);
+        opacity: 0;
+        transition: all 0.3s;
+
+        &::before {
+          content: '';
+          @include size(15px, 15px);
+          background-color: $white;
+          border-radius: 25px;
+          position: absolute;
+          top: -8px;
+          transition: all 0.2s;
+        }
+
+        .program_img {
+          position: absolute;
+          top: -180px; left: 0;
+          width: 220px;
+        }
+
+        p{
+          &:nth-child(2) {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            transition: all 0.2s;
+          }
+          &:nth-child(3) {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+          }
+        }
+        span {
+          font-size: 16px;
+          opacity: 0.8;
+          font-weight: 300;
+          line-height: 26px;
+        }
+        &:hover {
+          &::before {
+            background-color: $point-color;
+          }
+          p:nth-child(2) {
+            color: $point-color;
+          }
+        }
+      }
+    }
+  } //program
+} //program_bg
+.guide_bg {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+
+  .guide {
+    display: grid;
+    align-content: center;
+    @include size(1440px, 100%);
+    margin: 0 auto;
+    
+    .title {
+      margin-bottom: 70px;
+      p {
+        font-family: "Special Gothic Expanded One", sans-serif;
+        color: $point-color;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      div {
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      span {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 26px;
+      }
+    }
+    .tip_box {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      >div{
+        width: calc((100% - 20px)/3);
+        position: relative;
+        padding: 45px 50px;
+        background-color: rgba(240, 240, 240, 0.05);
+        position: relative;
+        border-radius: 15px;
+        opacity: 0;
+        transition: all 0.3s;
+        
+        img {
+          @include size(33px, 33px);
+          position: absolute;
+          right: 25px; top: 25px;
+          display: none;
+          transition: all 0.3s;
+        }
+        p{
+          &:nth-child(2) {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            color: $point-color;
+            font-size: 24px;
+            margin-bottom: 20px;
+          }
+          &:nth-child(3) {
+            font-family: "Special Gothic Expanded One", sans-serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+          &:nth-child(4) {
+            font-size: 16px;
+            opacity: 0.8;
+            font-weight: 300;
+            margin-bottom: 30px;
+          }
+        }
+        span {
+          font-size: 16px;
+          opacity: 0.8;
+          font-weight: 300;
+          line-height: 26px;
+        }
+        &:hover {
+          background-color: rgba(240, 240, 240, 0.15);
+          img {
+            display: block;
+          }
+        }
+      }
+    } //tip_box
+  } //guide
+} //guide_bg
+.under_bg {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+
+  .under {
+    display: grid;
+    align-content: center;
+    @include size(1440px, 100%);
+    margin: 0 auto;
+    text-align: center;
+    
+    .title {
+      font-family: "Special Gothic Expanded One", sans-serif;
+      background-image: linear-gradient(to right, $white 0%, $white 35%, $point-color 65%, $point-color 100%);
+      background-size: 200% 100%;
+      background-clip: text;
+      color: transparent;
+      font-size: 50px;
+      margin-bottom: 30px;
+      p {
+        font-size: 20px;
+      }
+    } //title
+    .btn_box {
+      @include flex();
+      gap: 10px;
+      margin: 90px auto 0;
+
+      >div {
+        display: block;
+        @include size(140px, 41px);
+        border: 1px solid $white;
+        border-radius: 30px;
+        transition: all 0.2s;
+        a {
+          display: block;
+          color: $white;
+          line-height: 41px;
+          font-size: 16px;
+          transition: all 0.2s;
+        }
+        &.btn_ticket {
+          background-color: $white;
+          a {
+            color: $black;
+            font-weight: 600;
+          }
+          &:hover {
+            background-color: $point-color;
+            border: 1px solid $point-color;
+            a{
+              color: $white;
+            }
+          }
+        }
+        &:hover {
+          background-color: $white;
+          a {
+            color: $black;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  } //under
+} //under_bg
+
+.footer_outer {
+  width: 100%;
+  padding: 90px 0;
+
+  .footer {
+    width: 1440px;
+    margin: 0 auto;
+
+    .top {
+      border-bottom: 1px solid rgba(240, 240, 240, 0.2);
+      padding-bottom: 10px;
+      @include flex();
+      justify-content: space-between;
+
+      .f_logo {
+        @include size(250px, 80px);
+      }
+      .sns {
+        @include flex();
+        gap: 10px;
+
+        >div {
+          background-color: rgba(240, 240, 240, 0.2);
+          border-radius: 50px;
+          @include size(44px, 44px);
+          text-align: center;
+          transition: all 0.2s;
+
+          a {
+            display: block;
+            i {
+              font-size: 16px;
+              color: $white;
+              line-height: 44px;
+              opacity: 0.4;
+              transition: all 0.2s;
+            }
+          }
+          &.insta {
+            i {
+              font-size: 18px;
+            }
+          }
+          &:hover {
+            background-color: rgba(240, 240, 240, 0.4);
+            i {
+              opacity: 1;
+            }
+          }
+        }
+      } //sns
+    } //top
+    .bot {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      .fest_info {
+        display: flex;
+
+        span {
+          font-size: 18px;
+          font-weight: 300;
+          margin-right: 30px;
+          line-height: 32px;
+          &:last-child {
+            opacity: 0.8;
+          }
+        }
+      }
+      .info {
+        p {
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 15px;
+          text-align: right;
+        }
+      }
+    } // bot
+    >p {
+      font-family: "Special Gothic Expanded One", sans-serif;
+      font-size: 14px;
+      opacity: 0.5;
+      letter-spacing: 0.2px;
+      margin-top: 60px;
+    }
+  } // footer
+} // footer_outer
+.btns {
+  width: 60px;
+  z-index: 100;
+  >div {
+    @include size(60px, 60px);
+    background-color: $white;
+    border-radius: 50px;}
+    text-align: center;
+    line-height: 60px;
+    
+  .live {
+    position: fixed;
+    bottom: 100px; right: 30px;
+    width: 60px;
+    @include flex();
+    overflow: hidden;
+    transition: all 0.4s;
+    
+    i{
+      display: block;
+      font-size: 23px;
+      line-height: 60px;
+      width: 60px;
+      color: $black;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+    a {
+      white-space: nowrap;
+      max-width: 0;
+      overflow: hidden;
+      color: $black;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      width: 215px;
+
+      i{
+        color: #FF0000;
+      }
+      a{
+        max-width: 135px;
+      }
+    }
+  }
+  .top_btn {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    a {
+      font-size: 16px;
+      color: $black;
+      font-family: "Special Gothic Expanded One", sans-serif;
+      display: block;
+      transition: all 0.2s;
+    }
+    &:hover {
+      background-color: $point-color;
+      transition: all 0.2s;
+      a{
+        color: $white;
+      }
+    }
+  }
+}

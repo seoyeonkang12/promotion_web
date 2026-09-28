@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서울불꽃축제</title>
+
+ <!------------- jquery ------------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.2.2/jquery.mousewheel.min.js"></script>
+  
+ <!------------- swiper ------------->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+  
+ <!------------- gsap ------------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+  <script script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+
+  <script src="./css/mainGsap.js" defer></script>
+  <script src="./css/main.js"></script>
+  <link rel="stylesheet" href="./css/main.css">
+
+ <!------------- swiper ------------->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+
+ <!------------- font ------------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <header class="header_outer">
+    <div class="header">
+        <div class="logo"><a href="#"><img src="./images/logo.svg" alt="로고 이미지"></a></div>
+        <nav class="gnb_menu">
+            <ul class="gnb">
+                <li><a href="#!">공지사항</a></li>
+                <li><a href="#!">행사장 안내</a></li>
+                <li><a href="#!">티켓예매</a></li>
+                <li><a href="#!">제휴문의</a></li>
+            </ul>
+            <div class="lang">
+                <p>KOR</p>
+                <div class="lang_box">
+                  <p>KOR</p>
+                  <p>ENG</p>
+                </div>
+            </div>
+        </nav><!--gnb_menu-->
+    </div>
+  </header><!--header_outer-->
+  <section class="main_visual_bg">
+    <div class="main_visual">
+      <div class="main_txt">
+        <p class="txt_line">2026</p>
+        <p class="p2">SEOUL</p>
+        <p class="p3">FIREWORKS</p>
+        <p class="p4">FESTIVAL</p>
+        <span class="span1">서울 노들섬(서울특별시 용산구 양녕로 445)</span>
+        <span class="span2">2026. 09.05 토 13:00 - 21:00</span>
+      </div>
+      <div class="right_img">
+        <img src="./images/main_fw.png" alt="fireworks_img">
+      </div>
+    </div>
+  </section><!--main_visual_bg-->
+  <section class="overview_bg">
+    <div class="overview">
+      <div class="view_left">
+        <div class="star"><img src="./images/star.png"></div>
+        <p>당신의 빛을 찾아서</p>
+      </div>
+      <div class="view_txt">
+        <div class="view_title">OVERVIEW</div>
+        <p>한화와 함께하는 서울세계불꽃축제는 바쁜 매일을 살아가는 시민의 일상에 즐거움을 선사하기 위해<br>한화 그룹에서 2000년부터 사회 공헌 사업으로 꾸준히 진행해 온 대한민국 최고의 축제입니다.</p>
+        <p>누군가는 뜨겁게 빛나고, 누군가는 조용히 반짝인다.<br>누군가는 눈부시게 빛나고, 누군가는 별처럼 스며든다.</p>
+        <p>서로 다른 감정과 시간을 품은 채 살아가는 사람들, <br>끝없이 변화하고 연결되는 우리의 삶이 함께 만들어 내는 위로와 희망의 이야기</p>
+      </div>
+    </div>
+  </section><!--overview_bg-->
+  <section class="fireworks_bg">
+    <div class="fireworks">
+      <div class="title">
+        <p>FIREWORKS</p>
+        <div>불꽃연출팀 소개</div>
+        <span>한국의 불꽃 문화를 세계에 알리는 불꽃연출팀과 연출음악을 소개합니다.</span>
+      </div>
+      <div class="txt">
+        <div class="korea on">
+          <div class="span_left">
+            <span>한국</span>
+            <span>The Starry  Night</span>
+          </div> 
+          <span>단순한 불꽃쇼를 넘어 대한민국을 대표하는 문화콘텐츠로 자리매김하고 있으며,<br>국내 주요 국가행사의 세리머니 불꽃쇼를 기획·연출해왔다.</span>
+        </div>
+        <div class="UK"> 
+          <div class="span_left">
+            <span>영국</span>
+            <span>Colours Reimagined</span>
+          </div>
+          <span>열정과 헌신, 그리고 넘치는 에너지를 바탕으로 성장을 거듭하며 세계적으로 인정받는<br>수상기업으로 자리매김했다. 최근 몇 년간 전 세계 관객을 사로잡은 불꽃 연출을 선보여왔다.</span>
+        </div>
+        <div class="USA"> 
+          <div class="span_left">
+            <span>미국</span>
+            <span>Instrumental Illumination</span>
+          </div>
+          <span>최고의 불꽃과 최고의 장비, 그리고 숙련된 팀으로 높은 품질의 연출을 선보이려는<br>열정을 바탕으로, 작은 회사에서 출발해 자신들의 연출을 맡기고자 하는 기업으로 성장했다.</span>
+        </div>
+      </div><!--txt-->
+    </div>
+  <div class="swiper fireworks_popup">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="popup_korea">
+          <div class="txt_p">
+            <p>HANWHA</p>
+            <p>한국</p>
+          </div>
+          <div class="p_info">
+            <div class="one">빛의 퍼즐</div>
+            <div class="two">The Starry Night</div>
+            <p>불안과 설렘,<br>슬픔과 기쁨,<br>절망과 희망.</p>
+            <p>그 감정들은 제자리를 찾아<br>조금씩 반짝이기 시작한다.</p>
+            <p>때로는 희미하고 흔들릴지라도<br>사라지지 않고 작은 빛의 조각이 되어<br>저마다의 색으로 세상을 물들인다.</p>
+            <p>조용히,<br>그렇게 우리의 밤은<br>빛으로 채워진다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="popup_UK">
+          <div class="txt_p">
+            <p>PYROTEX</p>
+            <p>영국</p>
+          </div>
+          <div class="p_info">
+            <div class="one">다시, 피어나다</div>
+            <div class="two">Colours Reimagined</div>
+            <p>익숙한 멜로디는 새로운 색을 입고,<br>끊임없이 변화하는 밤하늘은 새로운 감정과 빛으로  채워진다.</p>
+            <p>음악과 빛, 그리고 감정이 하나가 되는 순간,<br>익숙했던 모든 것은 전에 없던 새로운 감동으로 다시 태어난다..</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="popup_USA">
+          <div class="txt_p">
+            <p>ACE PYRO</p>
+            <p>미국</p>
+          </div>
+          <div class="p_info">
+            <div class="one">어둠, 저 너머</div>
+            <div class="two">Instrumental Illumination</div>
+            <p>시간을 가로지르는 빛의 여정.</p>
+            <p>긴장감 넘치는 선율에서 시작되는 이야기는<br>어둠을 너머 빛으로 나아가는 순간을 그려내고</p>
+            <p>우리 내면의 빛이 다시 피어나는 감동을 전한다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="close"></div>
+  </div>
+  </section><!--fireworks_bg-->
+  <section class="program_bg">
+    <div class="program">
+      <div class="title">
+        <p>PROGRAM</p>
+        <div>행사일정</div>
+        <span>세계불꽃축제의 행사 일정을 안내해 드립니다.</span>
+      </div>
+      <div class="schedule">
+        <div class="first">
+          <div class="program_img"><img src="./images/program_01.jpg" alt=""></div>
+          <p>사전행사</p>
+          <p>13:00 ~ 19:00 ㅣ 6시간</p>
+          <span>시민참여 프로그램<br>여의도 한강공원 / 멀티프라자</span>
+        </div>
+        <div class="second">
+          <div class="program_img"><img src="./images/program_02.jpg" alt=""></div>
+          <p>공식행사</p>
+          <p>19:40 ~ 20:00 ㅣ 20분</p>
+          <span>내빈소개, 환영사 및 축사,<br>개막식 세리머니</span>
+        </div>
+        <div class="third">
+          <div class="program_img"><img src="./images/program_03.jpg" alt=""></div>
+          <p>불꽃쇼</p>
+          <p>20:00 ~ 21:10 ㅣ 70분</p>
+          <span>영국, 미국, 한국</span>
+        </div>
+        <div class="fourth">
+          <div class="program_img"><img src="./images/program_04.jpg" alt=""></div>
+          <p>인파해산</p>
+          <p>21:10 ~ 22:00 ㅣ 50분</p>
+          <span>애프터 DJ 공연</span>
+        </div>
+        <div class="fifth">
+          <div class="program_img"><img src="./images/program_05.jpg" alt=""></div>
+          <p>클린 캠페인</p>
+          <p>21:10 ~ 23:00 ㅣ 110분</p>
+          <span>한화봉사단 쓰레기 수거활동<br>행사장 전역</span>
+        </div>
+      </div><!--schedule-->
+    </div>
+  </section><!--program_bg-->
+  <section class="guide_bg">
+    <div class="guide">
+      <div class="title">
+        <p>NIGHT GUIDE</p>
+        <div>관람 TiP</div>
+        <span>서울의 밤을 더 편안하게 즐길 수 있도록<br>관람 전 꼭 확인해야 할 정보를 안내합니다.</span>
+      </div>
+      <div class="tip_box">
+        <div class="first">
+          <img src="./images/star.png" alt="star_img">
+          <p>01</p>
+          <p>Arrive Early</p>
+          <p>여유롭게 도착하기</p>
+          <span>행사 당일 많은 인파가 예상됩니다.<br>원활한 입장을 위해 미리 도착해 주세요.</span>
+        </div>
+        <div class="second">
+          <img src="./images/star.png" alt="star_img">
+          <p>02</p>
+          <p>Public Transport</p>
+          <p>대중교통 이용하기</p>
+          <span>행사장 주변 교통이 혼잡할 수 있습니다.<br>가급적 대중교통을 이용해 주세요.</span>
+        </div>
+        <div class="third">
+          <img src="./images/star.png" alt="star_img">
+          <p>03</p>
+          <p>Keep Warm</p>
+          <p>따뜻하게 준비하기</p>
+          <span>늦은 시간까지 야외에 머무르는 만큼<br>겉옷과 방한용품을 준비해 주세요.</span>
+        </div>
+      </div><!--schedule-->
+    </div>
+  </section><!--guide_bg-->
+  <section class="under_bg">
+    <div class="under">
+      <div class="title">SEE YOU UNDER THE FIREWORKS.</div>
+      <p>서울의 밤을 가장 찬란하게 빛낼 순간을 만나보세요.</p>
+      <div class="btn_box">
+        <div class="btn_notice"><a href="#!">공지사항</a></div>
+        <div class="btn_ticket"><a href="#!">예매하기</a></div>
+        <div class="btn_place"><a href="#!">행사장 안내</a></div>
+      </div>
+    </div>
+  </section><!--under_bg-->
+  <footer class="footer_outer">
+    <div class="footer">
+      <div class="top">
+        <div class="f_logo"><img src="./images/footer_logo.png" alt="footer_logo_img"></div>
+        <div class="sns">
+          <div class="youtube"><a href="#!"><i class="fa-brands fa-youtube"></i></a></div>
+          <div class="facebook"><a href="#!"><i class="fa-brands fa-facebook-f"></i></a></div>
+          <div class="insta"><a href="#!"><i class="fa-brands fa-instagram"></i></a></div>
+        </div>
+      </div><!--top-->
+      <div class="bot">
+        <div class="fest_info">
+          <span>
+            축제장소<br>축제시간
+          </span>
+          <span>
+            서울 노들섬(서울특별시 용산구 양녕로 445)<br>2026. 09.05 토 13:00 - 21:00
+          </span>
+        </div>
+        <div class="info">
+          <p>사업자등록번호 : 202-81-16825</p>
+          <p>불꽃축제 운영사무국 : 02-519-9778</p>
+        </div>
+      </div><!--bot-->
+      <p>Copyright &copy; 2025 Hanwha group. All Rights Reserved.</p>
+    </div>
+  </footer><!--footer-->
+  <aside class="btns">
+    <div class="live">
+      <i class="fa-brands fa-youtube"></i>
+      <a href="#!">불꽃축제 생중계 보기</a>
+    </div>
+    <div class="top_btn"><a href="#!">TOP</a></div>
+  </aside>
+</body>
+</html>

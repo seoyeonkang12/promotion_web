@@ -1,0 +1,826 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+html {
+  background-color: #05070D;
+  font-family: Pretendard;
+  color: #F0F0F0;
+}
+
+/******************** common ********************/
+/*--------------- header ---------------*/
+.header_outer {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(5, 7, 13, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.header_outer .header {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_outer .header .logo {
+  width: 165px;
+}
+.header_outer .header .gnb_menu {
+  display: flex;
+  align-items: center;
+}
+.header_outer .header .gnb_menu .gnb {
+  display: flex;
+  align-items: center;
+}
+.header_outer .header .gnb_menu .gnb li {
+  line-height: 100px;
+}
+.header_outer .header .gnb_menu .gnb li a {
+  color: #F0F0F0;
+  display: block;
+  padding: 0 30px;
+  font-size: 18px;
+  font-weight: 400;
+  transition: all 0.2s;
+}
+.header_outer .header .gnb_menu .gnb li a:hover {
+  color: #EE7300;
+}
+.header_outer .header .gnb_menu .lang {
+  width: 66px;
+  height: 26px;
+  margin-left: 10px;
+  border: 1px solid #F0F0F0;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 26px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.header_outer .header .gnb_menu .lang p {
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.header_outer .header .gnb_menu .lang .lang_box {
+  opacity: 0;
+  position: absolute;
+  top: 35px;
+  border: 1px solid #F0F0F0;
+  border-radius: 8px;
+  width: 100%;
+  transition: all 0.2s;
+}
+.header_outer .header .gnb_menu .lang .lang_box p {
+  padding-top: 8px;
+  font-weight: 300;
+  transition: all 0.2s;
+}
+.header_outer .header .gnb_menu .lang .lang_box p:hover {
+  font-weight: 500;
+  color: #EE7300;
+}
+.header_outer .header .gnb_menu .lang .lang_box p:last-child {
+  padding-bottom: 8px;
+}
+.header_outer .header .gnb_menu .lang:hover {
+  background-color: #F0F0F0;
+}
+.header_outer .header .gnb_menu .lang:hover > p {
+  color: #05070D;
+  font-weight: 500;
+}
+.header_outer .header .gnb_menu .lang:hover .lang_box {
+  opacity: 1;
+}
+
+/*--------------- main_visual ---------------*/
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+.main_visual_bg {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+}
+.main_visual_bg .main_visual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+.main_visual_bg .main_visual .main_txt p {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 80px;
+  line-height: 90px;
+  font-weight: 400;
+  opacity: 1;
+}
+.main_visual_bg .main_visual .main_txt p.txt_line {
+  color: #05070D;
+  text-shadow: 1px 0 #F0F0F0, 0 1px #F0F0F0, -1px 0 #F0F0F0, 0 -1px #F0F0F0;
+}
+.main_visual_bg .main_visual .main_txt span {
+  font-size: 20px;
+  opacity: 0.8;
+  display: block;
+  font-weight: 300;
+}
+.main_visual_bg .main_visual .main_txt span:nth-child(5) {
+  margin: 40px 0 15px;
+}
+.main_visual_bg .main_visual .right_img {
+  width: auto;
+}
+
+.overview_bg {
+  background-image: url(../images/bg_02.png);
+  background-size: cover;
+  background-position: center;
+}
+.overview_bg .overview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+.overview_bg .overview .view_left {
+  width: 40%;
+  position: relative;
+}
+.overview_bg .overview .view_left .star {
+  width: 41px;
+  height: 41px;
+  position: absolute;
+  top: -20px;
+  left: 75px;
+}
+.overview_bg .overview .view_left p {
+  font-family: "Song Myung", serif;
+  font-size: 50px;
+  background-image: linear-gradient(#F0F0F0, #EE7300);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  text-align: center;
+  opacity: 0;
+}
+.overview_bg .overview .view_txt .view_title {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.overview_bg .overview .view_txt p {
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.overview_bg .overview .fireworks {
+  width: auto;
+}
+
+body.popup_open {
+  overflow: hidden;
+}
+
+.fireworks_bg {
+  background-image: url(../images/bg_03.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.fireworks_bg .fireworks {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+.fireworks_bg .fireworks .title {
+  margin-bottom: 70px;
+}
+.fireworks_bg .fireworks .title p {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color: #EE7300;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.fireworks_bg .fireworks .title div {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.fireworks_bg .fireworks .title span {
+  font-size: 18px;
+  font-weight: 300;
+}
+.fireworks_bg .fireworks .txt > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.6);
+  padding: 35px 20px;
+  transition: all 0.3s;
+  opacity: 0;
+  cursor: pointer;
+}
+.fireworks_bg .fireworks .txt > div .span_left {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.fireworks_bg .fireworks .txt > div .span_left span:first-child {
+  width: 20%;
+  font-size: 30px;
+  font-weight: 700;
+  opacity: 0.5;
+  line-height: 56px;
+  transition: all 0.3s;
+}
+.fireworks_bg .fireworks .txt > div .span_left span:last-child {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 24px;
+  text-align: left;
+  opacity: 0;
+  line-height: 56px;
+  transition: all 0.3s;
+}
+.fireworks_bg .fireworks .txt > div > span {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 300;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.fireworks_bg .fireworks .txt > div.on {
+  border-bottom: 1px solid #F0F0F0;
+}
+.fireworks_bg .fireworks .txt > div.on span:first-child {
+  opacity: 1;
+}
+.fireworks_bg .fireworks .txt > div.on span:last-child {
+  opacity: 1;
+}
+.fireworks_bg .fireworks .txt > div.on > span {
+  opacity: 1;
+}
+.fireworks_bg .fireworks .txt > div:hover {
+  border-bottom: 1px solid #F0F0F0;
+}
+.fireworks_bg .fireworks .txt > div:hover span:first-child {
+  opacity: 1;
+}
+.fireworks_bg .fireworks .txt > div:hover span:last-child {
+  opacity: 1;
+}
+.fireworks_bg .fireworks .txt > div:hover > span {
+  opacity: 1;
+}
+.fireworks_bg .swiper {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(5, 7, 13, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  transition: all 0.3s;
+}
+.fireworks_bg .swiper.on_pop {
+  display: block;
+}
+.fireworks_bg .swiper .swiper-slide {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fireworks_bg .swiper .swiper-slide > div {
+  width: 1070px;
+  height: 770px;
+  background-position: center;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid rgba(240, 240, 240, 0.08);
+  box-sizing: border-box;
+}
+.fireworks_bg .swiper .swiper-slide > div.popup_korea {
+  background-image: url(../images/korea.jpg);
+}
+.fireworks_bg .swiper .swiper-slide > div.popup_UK {
+  background-image: url(../images/UK.jpg);
+}
+.fireworks_bg .swiper .swiper-slide > div.popup_USA {
+  background-image: url(../images/USA.jpg);
+}
+.fireworks_bg .swiper .swiper-slide > div .txt_p {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+.fireworks_bg .swiper .swiper-slide > div .txt_p p:first-child {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 60px;
+  opacity: 0.1;
+}
+.fireworks_bg .swiper .swiper-slide > div .txt_p p:last-child {
+  font-size: 40px;
+  font-weight: 600;
+  opacity: 0.1;
+}
+.fireworks_bg .swiper .swiper-slide > div .p_info {
+  text-align: center;
+}
+.fireworks_bg .swiper .swiper-slide > div .p_info .one {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.fireworks_bg .swiper .swiper-slide > div .p_info .two {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 26px;
+  color: #EE7300;
+  margin-bottom: 40px;
+}
+.fireworks_bg .swiper .swiper-slide > div .p_info p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.fireworks_bg .swiper .swiper-slide > div .p_info p:last-child {
+  margin-bottom: 0;
+}
+.fireworks_bg .swiper .swiper-button-next, .fireworks_bg .swiper .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  color: #F0F0F0;
+  padding: 15px;
+  background-color: rgba(240, 240, 240, 0.15);
+  border-radius: 30px;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fireworks_bg .swiper .swiper-button-next:hover, .fireworks_bg .swiper .swiper-button-prev:hover {
+  background-color: rgba(240, 240, 240, 0.3);
+}
+.fireworks_bg .swiper .swiper-button-next {
+  right: 8%;
+}
+.fireworks_bg .swiper .swiper-button-prev {
+  left: 8%;
+}
+.fireworks_bg .swiper .close {
+  position: absolute;
+  top: 80px;
+  right: 9%;
+  width: 35px;
+  height: 35px;
+  background-image: url(../images/close.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+.fireworks_bg .swiper .close:hover {
+  background-image: url(../images/close_o.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.popup_open {
+  overflow: hidden;
+}
+
+.program_bg {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+}
+.program_bg .program {
+  display: grid;
+  align-content: center;
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+.program_bg .program .title {
+  margin-bottom: 230px;
+}
+.program_bg .program .title p {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color: #EE7300;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.program_bg .program .title div {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.program_bg .program .title span {
+  font-size: 18px;
+  font-weight: 300;
+}
+.program_bg .program .schedule {
+  display: flex;
+}
+.program_bg .program .schedule > div {
+  width: 20%;
+  position: relative;
+  padding-top: 30px;
+  border-top: 1px solid rgba(240, 240, 240, 0.6);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.program_bg .program .schedule > div::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #F0F0F0;
+  border-radius: 25px;
+  position: absolute;
+  top: -8px;
+  transition: all 0.2s;
+}
+.program_bg .program .schedule > div .program_img {
+  position: absolute;
+  top: -180px;
+  left: 0;
+  width: 220px;
+}
+.program_bg .program .schedule > div p:nth-child(2) {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+}
+.program_bg .program .schedule > div p:nth-child(3) {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.program_bg .program .schedule > div span {
+  font-size: 16px;
+  opacity: 0.8;
+  font-weight: 300;
+  line-height: 26px;
+}
+.program_bg .program .schedule > div:hover::before {
+  background-color: #EE7300;
+}
+.program_bg .program .schedule > div:hover p:nth-child(2) {
+  color: #EE7300;
+}
+
+.guide_bg {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+}
+.guide_bg .guide {
+  display: grid;
+  align-content: center;
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+.guide_bg .guide .title {
+  margin-bottom: 70px;
+}
+.guide_bg .guide .title p {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color: #EE7300;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.guide_bg .guide .title div {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.guide_bg .guide .title span {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+}
+.guide_bg .guide .tip_box {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.guide_bg .guide .tip_box > div {
+  width: calc((100% - 20px) / 3);
+  position: relative;
+  padding: 45px 50px;
+  background-color: rgba(240, 240, 240, 0.05);
+  position: relative;
+  border-radius: 15px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.guide_bg .guide .tip_box > div img {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  display: none;
+  transition: all 0.3s;
+}
+.guide_bg .guide .tip_box > div p:nth-child(2) {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color: #EE7300;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.guide_bg .guide .tip_box > div p:nth-child(3) {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.guide_bg .guide .tip_box > div p:nth-child(4) {
+  font-size: 16px;
+  opacity: 0.8;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.guide_bg .guide .tip_box > div span {
+  font-size: 16px;
+  opacity: 0.8;
+  font-weight: 300;
+  line-height: 26px;
+}
+.guide_bg .guide .tip_box > div:hover {
+  background-color: rgba(240, 240, 240, 0.15);
+}
+.guide_bg .guide .tip_box > div:hover img {
+  display: block;
+}
+
+.under_bg {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+}
+.under_bg .under {
+  display: grid;
+  align-content: center;
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.under_bg .under .title {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  background-image: linear-gradient(to right, #F0F0F0 0%, #F0F0F0 35%, #EE7300 65%, #EE7300 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.under_bg .under .title p {
+  font-size: 20px;
+}
+.under_bg .under .btn_box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 90px auto 0;
+}
+.under_bg .under .btn_box > div {
+  display: block;
+  width: 140px;
+  height: 41px;
+  border: 1px solid #F0F0F0;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+.under_bg .under .btn_box > div a {
+  display: block;
+  color: #F0F0F0;
+  line-height: 41px;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+.under_bg .under .btn_box > div.btn_ticket {
+  background-color: #F0F0F0;
+}
+.under_bg .under .btn_box > div.btn_ticket a {
+  color: #05070D;
+  font-weight: 600;
+}
+.under_bg .under .btn_box > div.btn_ticket:hover {
+  background-color: #EE7300;
+  border: 1px solid #EE7300;
+}
+.under_bg .under .btn_box > div.btn_ticket:hover a {
+  color: #F0F0F0;
+}
+.under_bg .under .btn_box > div:hover {
+  background-color: #F0F0F0;
+}
+.under_bg .under .btn_box > div:hover a {
+  color: #05070D;
+  font-weight: 600;
+}
+
+.footer_outer {
+  width: 100%;
+  padding: 90px 0;
+}
+.footer_outer .footer {
+  width: 1440px;
+  margin: 0 auto;
+}
+.footer_outer .footer .top {
+  border-bottom: 1px solid rgba(240, 240, 240, 0.2);
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer_outer .footer .top .f_logo {
+  width: 250px;
+  height: 80px;
+}
+.footer_outer .footer .top .sns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer_outer .footer .top .sns > div {
+  background-color: rgba(240, 240, 240, 0.2);
+  border-radius: 50px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  transition: all 0.2s;
+}
+.footer_outer .footer .top .sns > div a {
+  display: block;
+}
+.footer_outer .footer .top .sns > div a i {
+  font-size: 16px;
+  color: #F0F0F0;
+  line-height: 44px;
+  opacity: 0.4;
+  transition: all 0.2s;
+}
+.footer_outer .footer .top .sns > div.insta i {
+  font-size: 18px;
+}
+.footer_outer .footer .top .sns > div:hover {
+  background-color: rgba(240, 240, 240, 0.4);
+}
+.footer_outer .footer .top .sns > div:hover i {
+  opacity: 1;
+}
+.footer_outer .footer .bot {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer_outer .footer .bot .fest_info {
+  display: flex;
+}
+.footer_outer .footer .bot .fest_info span {
+  font-size: 18px;
+  font-weight: 300;
+  margin-right: 30px;
+  line-height: 32px;
+}
+.footer_outer .footer .bot .fest_info span:last-child {
+  opacity: 0.8;
+}
+.footer_outer .footer .bot .info p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-align: right;
+}
+.footer_outer .footer > p {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 14px;
+  opacity: 0.5;
+  letter-spacing: 0.2px;
+  margin-top: 60px;
+}
+
+.btns {
+  width: 60px;
+  z-index: 100;
+}
+.btns > div {
+  width: 60px;
+  height: 60px;
+  background-color: #F0F0F0;
+  border-radius: 50px;
+}
+.btns {
+  text-align: center;
+  line-height: 60px;
+}
+.btns .live {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.btns .live i {
+  display: block;
+  font-size: 23px;
+  line-height: 60px;
+  width: 60px;
+  color: #05070D;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.btns .live a {
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  color: #05070D;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+.btns .live:hover {
+  width: 215px;
+}
+.btns .live:hover i {
+  color: #FF0000;
+}
+.btns .live:hover a {
+  max-width: 135px;
+}
+.btns .top_btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.btns .top_btn a {
+  font-size: 16px;
+  color: #05070D;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  display: block;
+  transition: all 0.2s;
+}
+.btns .top_btn:hover {
+  background-color: #EE7300;
+  transition: all 0.2s;
+}
+.btns .top_btn:hover a {
+  color: #F0F0F0;
+}/*# sourceMappingURL=main.css.map */
