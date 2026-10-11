@@ -28,30 +28,55 @@
 
 ## ✨ Key Features
 
-### 1. Visual Design
-- 어두운 배경과 불꽃 이미지를 활용한 메인 비주얼 구성
-- 굵은 타이포그래피를 활용해 시각적 주목도 강화
-- 축제의 분위기를 강조한 콘텐츠 레이아웃 구성
-
-### 2. Scroll Animation
-- GSAP을 활용한 스크롤 기반 애니메이션 구현
-- 텍스트와 콘텐츠 요소가 순차적으로 나타나는 효과 적용
-
-### 3. Hover Interaction
-- 마우스 호버에 따른 활성 상태 변경
-- 선택한 콘텐츠에 따라 배경 이미지가 변경되는 인터랙션 구현
-
-### 4. Popup Slider
-- Swiper를 활용한 슬라이드 콘텐츠 구성
-- 팝업 열기 및 닫기 인터랙션 구현
-
-## 🖥️ Preview
-
-### Main Page
+### 1. Main Visual
+- 불꽃 이미지와 어두운 배경을 활용한 메인 비주얼 구성
+- 큰 타이포그래피를 활용해 시각적 주목도 강화
+- 축제 장소 및 행사 일정 정보 제공
 
 <img width="1899" height="927" alt="image" src="https://github.com/user-attachments/assets/9ee9464e-bd1d-4d05-aa89-ba4c6d5406f9" />
 
-<!-- 메인 화면 스크린샷을 추가할 예정 -->
+### 2. Festival Overview
+- 축제의 기획 의도와 콘셉트를 소개하는 콘텐츠 구성
+- 타이포그래피와 여백을 활용해 콘텐츠의 가독성 강화
+- 스크롤 애니메이션을 활용한 시각적 흐름 연출
+
+<img width="1897" height="923" alt="image" src="https://github.com/user-attachments/assets/043dbe42-af4d-452d-a94e-0d1f3e27c964" />
+
+### 3. Fireworks Team
+- 한국, 영국, 미국 불꽃연출팀 소개
+- 팀별 불꽃쇼 콘셉트와 연출 특징을 전달하는 콘텐츠 구성
+- 마우스 호버에 따른 활성 상태 및 배경 이미지 변경 인터랙션 구현
+
+<img width="1893" height="923" alt="image" src="https://github.com/user-attachments/assets/d891c0b8-826e-44c2-80fd-8aed5f0d38fd" />
+
+### 4. Event Program
+- 사전행사, 공식행사, 불꽃쇼, 인파 해산, 클린 캠페인 등 행사 일정 안내
+- 시간과 프로그램 정보를 구분해 쉽게 확인할 수 있도록 구성
+- 이미지와 텍스트를 조합한 콘텐츠 레이아웃 구현
+
+<img width="1893" height="921" alt="image" src="https://github.com/user-attachments/assets/ed4803ee-d580-4a07-b48d-8faa9e27ca84" />
+
+### 5. Night Guide
+- 축제 관람 전 확인해야 할 주요 정보 제공
+- 일찍 도착하기, 대중교통 이용하기, 따뜻하게 준비하기 등 관람 팁 안내
+- 번호와 제목을 활용해 정보를 순서대로 전달하도록 구성
+
+<img width="1887" height="922" alt="image" src="https://github.com/user-attachments/assets/65b0b823-31be-490a-8c3f-9dacc7526579" />
+
+### 6. Call to Action & Footer
+- 축제 참여를 유도하는 CTA 콘텐츠 구성
+- 공지사항, 예매, 행사장 안내 등 관련 메뉴 제공
+- 축제 장소 및 관련 정보를 확인할 수 있는 푸터 구성
+
+<img width="1889" height="923" alt="image" src="https://github.com/user-attachments/assets/0a394959-9cf4-41af-b478-af1e5cf25fef" />
+<img width="1889" height="499" alt="image" src="https://github.com/user-attachments/assets/dc1f2a0a-7b9f-4029-acd1-6ae0517a9e69" />
+
+### 7. Interactive UI
+- GSAP을 활용한 텍스트 및 콘텐츠 등장 애니메이션
+- jQuery를 활용한 마우스 이벤트와 UI 상태 제어
+- Swiper를 활용한 슬라이드 팝업 구현
+
+<img width="1904" height="923" alt="image" src="https://github.com/user-attachments/assets/05ec7019-6d4f-4143-b0c0-b118082eef91" />
 
 ## 📂 Project Structure
 
@@ -69,10 +94,24 @@ promotion_web/
 
 ※ 실제 프로젝트의 폴더 및 파일 위치를 기준으로 작성했습니다.
 
+## 💡 Challenges & Solutions
+
+### 1. GSAP Scroll Animation
+
+스크롤에 따라 콘텐츠가 자연스럽게 나타나도록 GSAP 애니메이션을 적용했습니다. 요소별 시작 위치와 지속 시간, 순차적인 등장 효과를 조정하며 콘텐츠의 흐름을 구성했습니다.
+
+### 2. Hover Interaction
+
+마우스 호버 시 선택된 콘텐츠와 배경 이미지가 함께 변경되도록 구현했습니다. 활성 클래스와 이미지 변경 로직을 연결해 사용자 동작에 반응하는 화면을 구성했습니다.
+
+### 3. Popup Slider
+
+Swiper를 활용해 슬라이드 팝업을 구성하고, 팝업 열기·닫기 동작을 구현했습니다. 슬라이드 조작과 팝업 외부 영역 클릭에 따른 닫기 동작을 구분해 사용자 인터랙션을 구성했습니다.
+
 ## 📚 What I Learned
 
-GSAP과 Swiper를 활용해 웹페이지에 다양한 인터랙션을 적용하고, jQuery를 이용해 사용자 이벤트에 따른 화면 변화를 구현했습니다.
-
-또한 시각적인 디자인뿐만 아니라 콘텐츠의 흐름과 사용자 경험을 고려하며 프로모션 사이트를 제작했습니다.
-
-<!-- 구현 과정에서 겪은 문제와 해결 방법을 추후 추가할 예정 -->
+- SCSS를 활용한 스타일 관리와 웹페이지 레이아웃 구성
+- jQuery를 활용한 이벤트 처리와 DOM 제어
+- GSAP을 활용한 스크롤 애니메이션 및 요소별 등장 효과 구현
+- Swiper를 활용한 슬라이드 구성과 팝업 인터랙션 구현
+- 시각적 디자인과 사용자 인터랙션을 함께 고려한 프로모션 사이트 제작
