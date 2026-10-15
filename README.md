@@ -1,4 +1,4 @@
-# 🎆 2026 Seoul Fireworks Festival
+# 🎆 2026 서울세계불꽃축제
 
 > **당신의 빛을 찾아서**
 > 
@@ -9,19 +9,19 @@
 
 <img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/1125be4d-d39d-488f-b094-0c6bc7e0e086" />
 
-## 📌 Project Overview
+## 📌 프로젝트 개요
 
-- **Project :** 개인 프로젝트
-- **Date :** 2026.09-2026.09 (총 3일)
-- **Target :** PC 화면 중심
-- **Role :** 기획, UI 디자인, 퍼블리싱 및 인터랙션 구현
+- **프로젝트 유형 :** 개인 프로젝트
+- **개발 기간 :** 2026.09-2026.09 (총 3일)
+- **주요 대상 플랫폼 :** PC 화면 중심
+- **담당 역할 :** 기획, UI 디자인, 퍼블리싱 및 인터랙션 구현
 
-### Project Goal
+### 프로젝트 목표
 
 불꽃축제의 시각적인 매력을 강조하고, 행사 정보와 프로그램을 직관적으로 전달하는 프로모션 웹사이트를 제작했습니다.  
 섹션별 레이아웃과 인터랙션을 구성해 사용자가 축제 정보를 자연스럽게 탐색할 수 있도록 설계했습니다.
 
-## 🛠️ Tech Stack
+## 🛠️ 기술 스택
 
 - **Markup :** HTML5
 - **Styling :** SCSS
@@ -29,7 +29,7 @@
 - **Animation :** GSAP, ScrollTrigger
 - **Slider :** Swiper
 
-## 📂 Project Structure
+## 📂 프로젝트 폴더 구조
 
 ```text
 promotion_web/
@@ -43,7 +43,7 @@ promotion_web/
 └── index.html
 ```
 
-## ✨ Key Features
+## ✨ 주요 기능
 
 ### 1. Full-page Section Navigation
 
@@ -71,7 +71,7 @@ promotion_web/
 - stagger를 적용한 순차적인 텍스트 및 콘텐츠 애니메이션
 - CTA 영역에 반복되는 그라데이션 텍스트 효과 적용
 
-## 💻 Code Highlights
+## 💻 핵심 코드 구현
 
 ### 1. Mousewheel Section Navigation
 
@@ -100,65 +100,65 @@ GSAP의 from()과 to()를 활용해 요소의 투명도와 위치를 조절하�
 
 CTA 영역의 제목에 그라데이션 위치를 반복적으로 변경하는 애니메이션을 적용해 시각적인 강조 효과를 구현했습니다.
 
-## 🔍 Key Implementations
+## 🔍 주요 구현 내용
 
-### Structure & Styling
+### 구조 및 스타일링
 
 - SCSS 변수와 믹스인을 활용해 공통 스타일을 관리했습니다.
 - 중첩 선택자를 활용해 섹션별 스타일을 구분했습니다.
 - Flexbox와 Grid, 고정 위치 지정 등을 활용해 콘텐츠 레이아웃을 구성했습니다.
 
-### Interaction & Animation
+### 인터랙션 및 애니메이션
 
 - jQuery 이벤트를 활용해 마우스 오버, 클릭, 스크롤에 반응하는 인터랙션을 구현했습니다.
 - Swiper와 팝업을 연동하고, 팝업 상태에 따라 페이지 스크롤을 제어했습니다.
 - GSAP과 ScrollTrigger를 활용해 콘텐츠가 화면에 진입하는 시점에 맞춰 애니메이션을 실행했습니다.
 
-### Improvements to Consider
+### 개선 방향
 
 - 반복되는 GSAP 애니메이션 코드를 공통 함수로 분리해 유지보수성을 개선할 수 있습니다.
 - 중복된 SCSS 규칙을 정리하고 공통 스타일의 재사용성을 높일 수 있습니다.
 - 고정 너비와 높이를 사용하는 레이아웃을 다양한 화면 크기에 맞게 보완할 수 있습니다.
 - 섹션 이동 시 첫 번째·마지막 섹션 처리와 팝업 상태를 추가로 점검해 예외 상황에 대한 안정성을 높일 수 있습니다.
 
-## 📂 Main Sections
+## 📂 주요 화면 구성
 
-### 1. Main Visual
+### 1. 메인 비주얼
 - 불꽃 이미지와 어두운 배경을 활용한 메인 비주얼 구성
 - 큰 타이포그래피를 활용해 시각적 주목도 강화
 - 축제 장소 및 행사 일정 정보 제공
 
 <img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/7df2090d-022d-4157-9974-43d4db44fbb7" />
 
-### 2. Festival Overview
+### 2. 축제 소개
 - 축제의 기획 의도와 콘셉트를 소개하는 콘텐츠 구성
 - 타이포그래피와 여백을 활용해 콘텐츠의 가독성 강화
 - 스크롤 애니메이션을 활용한 시각적 흐름 연출
 
 <img width="1903" height="946" alt="image" src="https://github.com/user-attachments/assets/67bca398-2f42-4def-94d8-cb798c9e7b9e" />
 
-### 3. Fireworks Team
+### 3. 불꽃연출팀 소개
 - 한국, 영국, 미국 불꽃연출팀 소개
 - 팀별 불꽃쇼 콘셉트와 연출 특징을 전달하는 콘텐츠 구성
 - 마우스 호버에 따른 활성 상태 및 배경 이미지 변경 인터랙션 구현
 
 <img width="1899" height="947" alt="image" src="https://github.com/user-attachments/assets/9baea6ac-cd7b-4f04-b4d4-a98f1a7dc320" />
 
-### 4. Event Program
+### 4. 행사 프로그램
 - 사전행사, 공식행사, 불꽃쇼, 인파 해산, 클린 캠페인 등 행사 일정 안내
 - 시간과 프로그램 정보를 구분해 쉽게 확인할 수 있도록 구성
 - 이미지와 텍스트를 조합한 콘텐츠 레이아웃 구현
 
 <img width="1900" height="946" alt="image" src="https://github.com/user-attachments/assets/1e9acc3e-04c4-4276-b112-2b2258d4f918" />
 
-### 5. Night Guide
+### 5. 관람 가이드
 - 축제 관람 전 확인해야 할 주요 정보 제공
 - 일찍 도착하기, 대중교통 이용하기, 따뜻하게 준비하기 등 관람 팁 안내
 - 번호와 제목을 활용해 정보를 순서대로 전달하도록 구성
 
 <img width="1899" height="946" alt="image" src="https://github.com/user-attachments/assets/2044fa91-e90e-425e-b76c-e26bec338a7f" />
 
-### 6. Call to Action & Footer
+### 6. 참여 유도 및 푸터
 - 축제 참여를 유도하는 CTA 콘텐츠 구성
 - 공지사항, 예매, 행사장 안내 등 관련 메뉴 제공
 - 축제 장소 및 관련 정보를 확인할 수 있는 푸터 구성
@@ -166,14 +166,14 @@ CTA 영역의 제목에 그라데이션 위치를 반복적으로 변경하는 �
 <img width="1900" height="947" alt="image" src="https://github.com/user-attachments/assets/f0a3db9a-378a-4f3c-be1f-dff6e6b6d3a7" />
 <img width="1900" height="462" alt="image" src="https://github.com/user-attachments/assets/f0a677d7-b70e-4dce-b0d3-7e6b5e5e1248" />
 
-### 7. Interactive UI
+### 7. 인터랙티브 UI
 - GSAP을 활용한 텍스트 및 콘텐츠 등장 애니메이션
 - jQuery를 활용한 마우스 이벤트와 UI 상태 제어
 - Swiper를 활용한 슬라이드 팝업 구현
 
 <img width="1905" height="946" alt="image" src="https://github.com/user-attachments/assets/d6c212b5-f6c4-45e2-8431-0a05dc05f44a" />
 
-## 📝 Retrospective
+## 📝 프로젝트 회고
 
 이번 프로젝트를 통해 HTML과 SCSS를 활용한 화면 구성뿐 아니라 jQuery를 이용한 이벤트 처리, Swiper를 활용한 슬라이드 연동, GSAP과 ScrollTrigger를 활용한 애니메이션 구현을 경험했습니다.
 
