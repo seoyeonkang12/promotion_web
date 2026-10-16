@@ -62,18 +62,6 @@ const FtitleP = document.querySelector('.fireworks .title p');
 const FtitleDiv = document.querySelector('.fireworks .title div');
 const FtitleSpan = document.querySelector('.fireworks .title span');
 
-// gsap.from([FtitleP, FtitleDiv, FtitleSpan], {
-//   opacity: 0,
-//   duration: 0.5,
-//   y: 20,
-//   stagger: 0.2,
-//   scrollTrigger: {
-//     trigger: '.fireworks',
-//     start: 'top center',
-//     toggleActions: 'restart none restart none',
-//   }
-// });
-
 gsap.from([FtitleP, FtitleDiv, FtitleSpan], {
   opacity: 0,
   duration: 0.5,
