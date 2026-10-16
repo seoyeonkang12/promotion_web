@@ -114,17 +114,55 @@ $('.fireworks .txt>div').hover(function() {
 }); //fireworks
 ~~~
 
-### 3. Swiper Popup Interaction
+### 3. Swiper 팝업 연동
 
-팀 영역을 클릭하면 팝업을 표시하고, slideToLoop()를 이용해 선택한 팀에 해당하는 슬라이드로 이동하도록 구현했습니다. 팝업 상태에 따라 클래스와 배경 페이지의 스크롤을 제어했습니다.
+선택한 팀에 맞는 상세 정보가 표시되도록 팝업과 Swiper 슬라이드를 연동했습니다.
 
-<img width="705" height="701" alt="image" src="https://github.com/user-attachments/assets/306d85ee-7170-41ab-9662-b5099d1fb096" />
+**💡 셀프 코드 리뷰**
 
-### 4. Scroll-triggered Animation
+- `slideToLoop()`를 활용한 선택 팀과 슬라이드 연결
+- 팝업 활성화 클래스에 따른 열기 · 닫기 상태 관리
+- 팝업 표시 중 배경 스크롤 제어
 
-GSAP의 from()과 to()를 활용해 요소의 투명도와 위치를 조절하고, ScrollTrigger로 특정 섹션이 화면에 진입할 때 애니메이션이 실행되도록 구성했습니다.
+~~~javascript
+$('.fireworks .txt>div').click(function() {
+  let index = $(this).index();
 
-<img width="587" height="352" alt="image" src="https://github.com/user-attachments/assets/9f56e133-8902-47c7-b910-43cea5bf503a" />
+  $('.swiper').addClass('on_pop');
+  $('body').addClass('popup_open');
+  swiper.slideToLoop(index, 500);
+});
+
+$('.swiper .close').click(function(){
+  $('.swiper').removeClass('on_pop');
+  $('body').removeClass('popup_open');
+}); 
+
+$('.swiper').click(function(e){
+  if($(e.target).closest('.swiper-slide > div').length) {return;}
+
+  if($(e.target).closest('.swiper-button-next, .swiper-button-prev').length) {return;}
+
+  if($(e.target).closest('.close').length) {return;}
+
+  $('.swiper').removeClass('on_pop');
+  $('body').removeClass('popup_open');
+}); //fireworks_popup
+~~~
+
+### 4. 스크롤 기반 애니메이션
+
+GSAP과 ScrollTrigger를 활용해 스크롤 위치에 따라 텍스트와 콘텐츠가 나타나는 애니메이션을 구현했습니다.
+
+**💡 셀프 코드 리뷰**
+
+- gsap.from()과 gsap.fromTo()를 활용한 시작·종료 상태 설정
+- opacity, x, y 속성을 활용한 요소 등장 효과
+- stagger를 활용한 순차적인 애니메이션 적용
+- ScrollTrigger를 활용한 스크롤 위치 기반 애니메이션 실행
+
+~~~javascript
+
 
 ### 5. Animated Gradient Text
 
