@@ -15,7 +15,7 @@
 - **개발 기간 :** 2026.09-2026.09 (총 3일)
 - **담당 역할 :** 기획, UI 디자인, 퍼블리싱 및 인터랙션 구현
 - **작업 환경 :** PC 중심
-- **주요 기술 :** HTML5, CSS3, jQuery, GSAP
+- **주요 기술 :** HTML5, SCSS, jQuery, GSAP
 
 ## 🛠️ 기술 스택
 
@@ -48,12 +48,16 @@
 - 선택한 팀에 따라 배경 이미지 전환
 - 팀 영역 클릭 시 해당 팀의 상세 정보 팝업 표시
 
+<!-- 팀별 배경 전환 GIF 또는 스크린샷 삽입 -->
+
 ### 3. 팝업 및 슬라이더 연동
 
 - Swiper를 활용한 팀별 상세 정보 슬라이드 구현
 - 선택한 팀과 팝업 슬라이드 연동
 - 닫기 버튼 및 팝업 바깥 영역 클릭을 통한 닫기 기능
 - 팝업이 열린 동안 배경 페이지의 스크롤 제한
+
+<!-- 팝업 및 슬라이드 GIF 또는 스크린샷 삽입 -->
 
 ## 💻 핵심 코드 구현
 
@@ -86,12 +90,12 @@ $('section').mousewheel(function(event, delta){
 
 ### 2. 팀 선택에 따른 배경 이미지 변경
 
-불꽃축제 팀 영역의 마우스 오버 이벤트를 감지하고, 선택한 요소의 인덱스에 따라 배경 이미지를 변경하도록 구현했습니다.
+마우스 오버한 팀의 인덱스에 따라 활성 클래스와 배경 이미지를 전환하도록 구현했습니다.
 
 **💡 셀프 코드 리뷰**
 
-- hover() 이벤트를 활용한 마우스 오버 처리
-- addClass()와 removeClass()를 활용한 활성 상태 전환
+- `hover()` 이벤트를 활용한 마우스 오버 처리
+- `addClass()`와 `removeClass()`를 활용한 활성 상태 전환
 - 선택한 팀에 따른 배경 이미지 변경
 
 ~~~javascript
@@ -116,13 +120,13 @@ $('.fireworks .txt>div').hover(function() {
 
 ### 3. Swiper 팝업 연동
 
-선택한 팀에 맞는 상세 정보가 표시되도록 팝업과 Swiper 슬라이드를 연동했습니다.
+선택한 팀에 해당하는 상세 정보가 표시되도록 팝업과 Swiper 슬라이드를 연동했습니다.
 
 **💡 셀프 코드 리뷰**
 
 - `slideToLoop()`를 활용한 선택 팀과 슬라이드 연결
-- 팝업 활성화 클래스에 따른 열기 · 닫기 상태 관리
-- 팝업 표시 중 배경 스크롤 제어
+- `addClass()`와 `removeClass()`를 활용한 팝업 열기·닫기 상태 관리
+- body의 popup_open 클래스를 활용한 배경 스크롤 제어
 
 ~~~javascript
 $('.fireworks .txt>div').click(function() {
@@ -152,94 +156,73 @@ $('.swiper').click(function(e){
 
 ### 4. 스크롤 기반 애니메이션
 
-GSAP과 ScrollTrigger를 활용해 스크롤 위치에 따라 텍스트와 콘텐츠가 나타나는 애니메이션을 구현했습니다.
+GSAP과 ScrollTrigger를 활용해 스크롤 위치에 따라 텍스트와 콘텐츠가 순차적으로 나타나도록 구현했습니다.
 
 **💡 셀프 코드 리뷰**
 
-- gsap.from()과 gsap.fromTo()를 활용한 시작·종료 상태 설정
-- opacity, x, y 속성을 활용한 요소 등장 효과
-- stagger를 활용한 순차적인 애니메이션 적용
-- ScrollTrigger를 활용한 스크롤 위치 기반 애니메이션 실행
+- `gsap.from()`과 `gsap.to()`를 활용한 시작·종료 상태 설정
+- `opacity`, `x`, `y` 속성을 활용한 요소 등장 효과
+- `stagger`를 활용한 순차적인 애니메이션 적용
+- `ScrollTrigger`를 활용한 스크롤 위치 기반 애니메이션 실행
 
 ~~~javascript
+gsap.from([mainp1, mainp2, mainp3, mainp4, span1, span2], {
+  opacity: 0,
+  duration: 0.5,
+  y: 20,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: '.main_visual',
+    start: 'top center',
+    toggleActions: 'restart none restart none',
+  }
+});
 
+gsap.to(starP, {
+  opacity: 1,
+  duration: 1.3,
+  x: 20,
+  scrollTrigger: {
+    trigger: '.view_left',
+    start: 'top center',
+    toggleActions: 'restart none restart none',
+  }
+});
+~~~
 
-### 5. Animated Gradient Text
+### 5. 그라데이션 텍스트 애니메이션
 
-CTA 영역의 제목에 그라데이션 위치를 반복적으로 변경하는 애니메이션을 적용해 시각적인 강조 효과를 구현했습니다.
+GSAP으로 텍스트의 그라데이션 위치를 애니메이션 처리해 CTA 영역의 시각적 강조 효과를 구현했습니다.
 
-## 🔍 주요 구현 내용
+**💡 셀프 코드 리뷰**
 
-### 구조 및 스타일링
+- linear-gradient()를 활용한 텍스트 그라데이션 구성
+- background-clip: text와 투명한 텍스트 색상을 활용한 그라데이션 표현
+- GSAP의 backgroundPosition 애니메이션을 활용한 그라데이션 이동
 
-- SCSS 변수와 믹스인을 활용해 공통 스타일을 관리했습니다.
-- 중첩 선택자를 활용해 섹션별 스타일을 구분했습니다.
-- Flexbox와 Grid, 고정 위치 지정 등을 활용해 콘텐츠 레이아웃을 구성했습니다.
-
-### 인터랙션 및 애니메이션
-
-- jQuery 이벤트를 활용해 마우스 오버, 클릭, 스크롤에 반응하는 인터랙션을 구현했습니다.
-- Swiper와 팝업을 연동하고, 팝업 상태에 따라 페이지 스크롤을 제어했습니다.
-- GSAP과 ScrollTrigger를 활용해 콘텐츠가 화면에 진입하는 시점에 맞춰 애니메이션을 실행했습니다.
-
-### 개선 방향
-
-- 반복되는 GSAP 애니메이션 코드를 공통 함수로 분리해 유지보수성을 개선할 수 있습니다.
-- 중복된 SCSS 규칙을 정리하고 공통 스타일의 재사용성을 높일 수 있습니다.
-- 고정 너비와 높이를 사용하는 레이아웃을 다양한 화면 크기에 맞게 보완할 수 있습니다.
-- 섹션 이동 시 첫 번째·마지막 섹션 처리와 팝업 상태를 추가로 점검해 예외 상황에 대한 안정성을 높일 수 있습니다.
-
-## 📂 주요 화면 구성
-
-### 1. 메인 비주얼
-- 불꽃 이미지와 어두운 배경을 활용한 메인 비주얼 구성
-- 큰 타이포그래피를 활용해 시각적 주목도 강화
-- 축제 장소 및 행사 일정 정보 제공
-
-<img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/7df2090d-022d-4157-9974-43d4db44fbb7" />
-
-### 2. 축제 소개
-- 축제의 기획 의도와 콘셉트를 소개하는 콘텐츠 구성
-- 타이포그래피와 여백을 활용해 콘텐츠의 가독성 강화
-- 스크롤 애니메이션을 활용한 시각적 흐름 연출
-
-<img width="1903" height="946" alt="image" src="https://github.com/user-attachments/assets/67bca398-2f42-4def-94d8-cb798c9e7b9e" />
-
-### 3. 불꽃연출팀 소개
-- 한국, 영국, 미국 불꽃연출팀 소개
-- 팀별 불꽃쇼 콘셉트와 연출 특징을 전달하는 콘텐츠 구성
-- 마우스 호버에 따른 활성 상태 및 배경 이미지 변경 인터랙션 구현
-
-<img width="1899" height="947" alt="image" src="https://github.com/user-attachments/assets/9baea6ac-cd7b-4f04-b4d4-a98f1a7dc320" />
-
-### 4. 행사 프로그램
-- 사전행사, 공식행사, 불꽃쇼, 인파 해산, 클린 캠페인 등 행사 일정 안내
-- 시간과 프로그램 정보를 구분해 쉽게 확인할 수 있도록 구성
-- 이미지와 텍스트를 조합한 콘텐츠 레이아웃 구현
-
-<img width="1900" height="946" alt="image" src="https://github.com/user-attachments/assets/1e9acc3e-04c4-4276-b112-2b2258d4f918" />
-
-### 5. 관람 가이드
-- 축제 관람 전 확인해야 할 주요 정보 제공
-- 일찍 도착하기, 대중교통 이용하기, 따뜻하게 준비하기 등 관람 팁 안내
-- 번호와 제목을 활용해 정보를 순서대로 전달하도록 구성
-
-<img width="1899" height="946" alt="image" src="https://github.com/user-attachments/assets/2044fa91-e90e-425e-b76c-e26bec338a7f" />
-
-### 6. 참여 유도 및 푸터
-- 축제 참여를 유도하는 CTA 콘텐츠 구성
-- 공지사항, 예매, 행사장 안내 등 관련 메뉴 제공
-- 축제 장소 및 관련 정보를 확인할 수 있는 푸터 구성
-
-<img width="1900" height="947" alt="image" src="https://github.com/user-attachments/assets/f0a3db9a-378a-4f3c-be1f-dff6e6b6d3a7" />
-<img width="1900" height="462" alt="image" src="https://github.com/user-attachments/assets/f0a677d7-b70e-4dce-b0d3-7e6b5e5e1248" />
-
-### 7. 인터랙티브 UI
-- GSAP을 활용한 텍스트 및 콘텐츠 등장 애니메이션
-- jQuery를 활용한 마우스 이벤트와 UI 상태 제어
-- Swiper를 활용한 슬라이드 팝업 구현
-
-<img width="1905" height="946" alt="image" src="https://github.com/user-attachments/assets/d6c212b5-f6c4-45e2-8431-0a05dc05f44a" />
+~~~css
+.title {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  background-image: linear-gradient(to right, $white 0%, $white 35%, $point-color 65%, $point-color 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  color: transparent;
+  font-size: 50px;
+  margin-bottom: 30px;
+  p {
+    font-size: 20px;
+  }
+} //title
+~~~
+~~~javascript
+gsap.to(underTitle, {
+  backgroundPosition: '100% 50%',
+  duration: 2,
+  repeat: -1,
+  yoyo: true,
+  ease: 'power1.inOut'
+});
+~~~
 
 ## 📂 프로젝트 폴더 구조
 
