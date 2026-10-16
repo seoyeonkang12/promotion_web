@@ -3,23 +3,19 @@
 > **당신의 빛을 찾아서**
 > 
 > 한화 서울세계불꽃축제를 주제로 제작한 프로모션 웹사이트 리디자인 프로젝트입니다.  
-> 불꽃축제의 화려한 분위기를 어두운 배경과 오렌지 포인트 컬러로 표현하고, 스크롤 애니메이션과 인터랙션을 활용해 몰입감 있는 웹 경험을 구현했습니다.
+> 어두운 배경과 오렌지 포인트 컬러를 활용해 불꽃축제의 분위기를 표현하고, 섹션별 인터랙션과 스크롤 애니메이션을 통해 몰입감 있는 웹 경험을 구현했습니다.
 
 🔗 [서울불꽃축제 프로모션 사이트 바로가기](https://seoyeonkang12.github.io/promotion_web/)
 
-<img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/1125be4d-d39d-488f-b094-0c6bc7e0e086" />
+<img width="1902" height="945" alt="image" src="https://github.com/user-attachments/assets/7df2090d-022d-4157-9974-43d4db44fbb7" />
 
 ## 📌 프로젝트 개요
 
 - **프로젝트 유형 :** 개인 프로젝트
 - **개발 기간 :** 2026.09-2026.09 (총 3일)
-- **주요 대상 플랫폼 :** PC 화면 중심
 - **담당 역할 :** 기획, UI 디자인, 퍼블리싱 및 인터랙션 구현
-
-## 🎯 프로젝트 목표
-
-불꽃축제의 시각적인 매력을 강조하고, 행사 정보와 프로그램을 직관적으로 전달하는 프로모션 웹사이트를 제작했습니다.  
-섹션별 레이아웃과 인터랙션을 구성해 사용자가 축제 정보를 자연스럽게 탐색할 수 있도록 설계했습니다.
+- **작업 환경 :** PC 중심
+- **주요 기술 :** HTML5, CSS3, jQuery, GSAP
 
 ## 🛠️ 기술 스택
 
@@ -29,46 +25,94 @@
 - **Animation :** GSAP, ScrollTrigger
 - **Slider :** Swiper
 
+## 🎯 프로젝트 목표
+
+- 어두운 배경과 오렌지 컬러를 활용한 축제 분위기 표현
+- 섹션 이동과 팀별 인터랙션을 통한 사용자 경험 강화
+- GSAP과 Swiper를 활용한 동적인 콘텐츠 구현
+
 ## ✨ 주요 기능
 
-### 1. Full-page Section Navigation
+### 1. 섹션별 화면 이동
 
-- 마우스 휠 방향에 따라 이전·다음 섹션으로 이동하는 스크롤 기능 구현
-- animate()를 활용한 부드러운 섹션 전환
+- 마우스 휠 방향에 따른 이전·다음 섹션 이동
+- `animate()`를 활용한 부드러운 섹션 전환
 - TOP 버튼 클릭 시 페이지 최상단으로 이동
+- 팝업 활성화 상태에 따른 섹션 이동 제어
 
-### 2. Interactive Fireworks Teams
+<!-- 섹션 이동 GIF 또는 스크린샷 삽입 -->
 
-- 한국, 영국, 미국 팀 영역에 마우스를 올리면 활성화 상태 변경
-- 팀별 배경 이미지 전환으로 시각적인 피드백 제공
-- 팀 영역 클릭 시 해당 팀의 상세 정보를 팝업 슬라이드로 표시
+### 2. 불꽃축제 팀별 인터랙션
 
-### 3. Popup & Slider
+- 한국, 영국, 미국 팀 영역에 마우스를 올리면 활성 상태 변경
+- 선택한 팀에 따라 배경 이미지 전환
+- 팀 영역 클릭 시 해당 팀의 상세 정보 팝업 표시
+
+### 3. 팝업 및 슬라이더 연동
 
 - Swiper를 활용한 팀별 상세 정보 슬라이드 구현
 - 선택한 팀과 팝업 슬라이드 연동
 - 닫기 버튼 및 팝업 바깥 영역 클릭을 통한 닫기 기능
 - 팝업이 열린 동안 배경 페이지의 스크롤 제한
 
-### 4. Scroll-triggered Animation
-
-- ScrollTrigger를 활용한 섹션별 애니메이션 실행 시점 제어
-- opacity, x, y 속성을 활용한 콘텐츠 등장 효과
-- stagger를 적용한 순차적인 텍스트 및 콘텐츠 애니메이션
-- CTA 영역에 반복되는 그라데이션 텍스트 효과 적용
-
 ## 💻 핵심 코드 구현
 
-### 1. Mousewheel Section Navigation
+### 1. 마우스 휠 기반 섹션 이동
 
-마우스 휠의 방향에 따라 이전 또는 다음 섹션으로 이동하도록 구현했습니다.  
-팝업이 열린 상태에서는 섹션 이동을 제한해 팝업과 페이지 스크롤의 간섭을 줄였습니다.
+마우스 휠 방향에 따라 이전 또는 다음 섹션으로 이동하도록 구현했습니다.  
+팝업이 열린 상태에서는 섹션 이동을 제한해 인터랙션 간 충돌을 방지했습니다.
 
-### 2. Dynamic Background Change
+**💡 셀프 코드 리뷰**
+
+- 마우스 휠 이벤트를 활용한 이동 방향 감지
+- `animate()`를 활용한 섹션 전환
+- 팝업 상태에 따른 이벤트 제어를 통한 동작 충돌 방지
+
+~~~javascript
+$('section').mousewheel(function(event, delta){
+  if($('.fireworks_popup').hasClass('on_pop')) {
+   return;
+  }
+
+  if(delta > 0) { 
+    point = $(this).prev().offset().top;
+  } else if(delta < 0) {
+    point = $(this).next().offset().top;
+  }
+
+  $('html, body').stop().animate({scrollTop: point}, 500);
+}); //mousewheel_event
+~~~
+
+### 2. 팀 선택에 따른 배경 이미지 변경
 
 불꽃축제 팀 영역의 마우스 오버 이벤트를 감지하고, 선택한 요소의 인덱스에 따라 배경 이미지를 변경하도록 구현했습니다.
 
-<img width="601" height="344" alt="image" src="https://github.com/user-attachments/assets/464346c1-25cc-4f6d-90b0-fc9d39b2238d" />
+**💡 셀프 코드 리뷰**
+
+- hover() 이벤트를 활용한 마우스 오버 처리
+- addClass()와 removeClass()를 활용한 활성 상태 전환
+- 선택한 팀에 따른 배경 이미지 변경
+
+~~~javascript
+$('.fireworks .txt>div').hover(function() {
+  $('.fireworks .txt>div').removeClass('on');
+  $(this).addClass('on');
+  
+  const index = $(this).index();
+
+  if(index === 0) {
+    $('.fireworks_bg').css('background-image', 'url("./images/bg_03.png")'
+    );
+  } else if (index === 1) {
+    $('.fireworks_bg').css('background-image', 'url("./images/bg_03-2.png")'
+    );
+  } else if (index === 2){
+    $('.fireworks_bg').css('background-image', 'url("./images/bg_03-3.png")'
+    );
+  }
+}); //fireworks
+~~~
 
 ### 3. Swiper Popup Interaction
 
