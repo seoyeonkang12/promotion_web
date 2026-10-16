@@ -16,7 +16,7 @@
 - **주요 대상 플랫폼 :** PC 화면 중심
 - **담당 역할 :** 기획, UI 디자인, 퍼블리싱 및 인터랙션 구현
 
-### 프로젝트 목표
+## 🎯 프로젝트 목표
 
 불꽃축제의 시각적인 매력을 강조하고, 행사 정보와 프로그램을 직관적으로 전달하는 프로모션 웹사이트를 제작했습니다.  
 섹션별 레이아웃과 인터랙션을 구성해 사용자가 축제 정보를 자연스럽게 탐색할 수 있도록 설계했습니다.
@@ -28,20 +28,6 @@
 - **Interaction :** jQuery
 - **Animation :** GSAP, ScrollTrigger
 - **Slider :** Swiper
-
-## 📂 프로젝트 폴더 구조
-
-```text
-promotion_web/
-├── css/
-│   ├── main.css
-│   ├── main.css.map
-│   ├── main.scss
-│   ├── main.js
-│   └── mainGsap.js
-├── images/
-└── index.html
-```
 
 ## ✨ 주요 기능
 
@@ -172,6 +158,20 @@ CTA 영역의 제목에 그라데이션 위치를 반복적으로 변경하는 �
 - Swiper를 활용한 슬라이드 팝업 구현
 
 <img width="1905" height="946" alt="image" src="https://github.com/user-attachments/assets/d6c212b5-f6c4-45e2-8431-0a05dc05f44a" />
+
+## 📂 프로젝트 폴더 구조
+
+```text
+promotion_web/
+├── css/
+│   ├── main.css
+│   ├── main.css.map
+│   ├── main.scss
+│   ├── main.js
+│   └── mainGsap.js
+├── images/
+└── index.html
+```
 
 ## 📝 프로젝트 회고
 
